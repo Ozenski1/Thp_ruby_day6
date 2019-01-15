@@ -1,28 +1,42 @@
-def echo(a)
-  return a
+def echo(mots)
+  puts mots
+return mots
 end
 
-def shout(a)
-  return a.upcase
+
+
+def shout(mots)
+puts mots.upcase
+return mots.upcase
 end
 
-def repeat(a, b=2)
-  return a+(' '+a)*(b-1)
+
+  def repeat(hello, n=2)
+   result = hello+" "
+   result=result*n
+   result[-1]= ""
+   puts result
+   return result
+  end
+
+
+
+def start_of_word (mots,s)
+  return mots[0,s]
+
 end
 
-def start_of_word(a, b)
-  return a[0..(b-1)]
+def first_word(mots)
+
+mots= mots.split(" ")
+
+return mots[0]
+
 end
 
-def first_word(a)
-  return a.split.first
-end
+def titleize(str)
 
-def title
-title.gsub(/\w+/) { |title| a.capitalize }
-end
-
-def titleize (str)
   sw = %w[and in the of a an]
-  str.capitalize.gsub( /\S+/ ) { |w| sw.include(w) ? w : w.capitalize }
+
+  str.capitalize.gsub( /\S+/ ) { |w| sw.include?(w) ? w : w.capitalize }
 end
